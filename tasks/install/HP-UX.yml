@@ -1,0 +1,4 @@
+---
+
+- name: Install BigFix Client
+  command: "/usr/sbin/swinstall -s {{ ansible_hostname }}:/tmp/{{ bigfix_client_file_name }} BESAgent"

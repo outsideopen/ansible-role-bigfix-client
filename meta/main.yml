@@ -1,0 +1,42 @@
+---
+dependencies: []
+galaxy_info:
+  role_name: bigfix_client
+  author: David Lundgren
+  company: Outside Open
+  description: BigFix Client installer
+  license: MIT
+  min_ansible_version: 2.0
+  platforms:
+    - name: Ubuntu
+      versions:
+        - 12
+        - 14
+        - 16
+        - 18
+    - name: Debian
+      versions:
+        - 7
+        - 8
+    - name: EL
+      versions:
+        - 5
+        - 6
+        - 7
+    - name: opensuse
+      versions:
+        - 10
+        - 11
+        - 12
+    - name: SLES
+      versions:
+        - 11
+        - 12
+    - name: Solaris
+      versions:
+        - 10
+        - 11
+  galaxy_tags:
+    - system
+    - bigfix
+    - bigfix client

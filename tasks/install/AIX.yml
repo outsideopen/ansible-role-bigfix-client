@@ -1,0 +1,4 @@
+---
+
+- name: Install BigFix Client
+  command: "installp –agqYXd /tmp/{{ bigfix_client_file_name }} BESClient"

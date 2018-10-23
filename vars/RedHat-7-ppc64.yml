@@ -1,0 +1,4 @@
+---
+bigfix_client_file_dest: BESAgent-9.5.6.63-rhe5.ppc64.rpm
+bigfix_client_file_sum: 90e71f22db48ffaf9add7c6c60b77697b987d92998250ad2c33bd1e238e00bc4
+bigfix_client_file_url: http://software.bigfix.com/download/bes/95/BESAgent-9.5.6.63-rhe5.ppc64.rpm
