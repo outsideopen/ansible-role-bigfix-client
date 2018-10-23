@@ -1,4 +1,4 @@
 ---
-bigfix_client_file_dest: BESAgent-9.5.6.63-debian6.i386.deb
-bigfix_client_file_sum: 6f4c186fae020b42de35587e4cf4f6ca08539a67d76ad3a3ccb1e9add9821c4b
-bigfix_client_file_url: http://software.bigfix.com/download/bes/95/BESAgent-9.5.6.63-debian6.i386.deb
+bigfix_client_file_dest: BESAgent-9.5.10.79-debian6.i386.deb
+bigfix_client_file_sum: 2b3309ef95a448091aea11b832b4ead5b1839dc9151cbee1ce2366d43f06278b
+bigfix_client_file_url: http://software.bigfix.com/download/bes/95/BESAgent-9.5.10.79-debian6.i386.deb

@@ -1,4 +1,4 @@
 ---
-bigfix_client_file_dest: BESAgent-9.5.6.63-ubuntu10.amd64.deb
-bigfix_client_file_sum: e4f9c4a6a873b24853d90ff1dfaebbc11435f936783bac75d76708c0ff487da0
-bigfix_client_file_url: http://software.bigfix.com/download/bes/95/BESAgent-9.5.6.63-ubuntu10.amd64.deb
+bigfix_client_file_dest: BESAgent-9.5.10.79-ubuntu10.amd64.deb
+bigfix_client_file_sum: 48895b62d3e3308587493469ad21f06ac78f03db135412dcec890aa2de236f49
+bigfix_client_file_url: http://software.bigfix.com/download/bes/95/BESAgent-9.5.10.79-ubuntu10.amd64.deb

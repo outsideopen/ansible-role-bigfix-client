@@ -1,4 +1,4 @@
 ---
-bigfix_client_file_dest: BESAgent-9.5.6.63.x86_sol10.pkg
-bigfix_client_file_sum: 6eb6505c1dd495b1ce167c8684897b74c7eb109bfbf6d84a904032a207e32eba
-bigfix_client_file_url: http://software.bigfix.com/download/bes/95/BESAgent-9.5.6.63.x86_sol10.pkg
+bigfix_client_file_dest: BESAgent-9.5.10.79.x86_sol10.pkg
+bigfix_client_file_sum: 314e4924bf305e0a6986fe855f9dc7009c2546a17fd9b5ea90f380f83b3fd538
+bigfix_client_file_url: http://software.bigfix.com/download/bes/95/BESAgent-9.5.10.79.x86_sol10.pkg
