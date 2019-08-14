@@ -1,4 +1,4 @@
 ---
-bigfix_client_file_dest: BESAgent-9.5.10.79.sparc_sol10.pkg
-bigfix_client_file_sum: 1520d53c1e318768da44e06f1ecb7e42aa841633013bc8ad6f4e30ada38187f5
-bigfix_client_file_url: http://software.bigfix.com/download/bes/95/BESAgent-9.5.10.79.sparc_sol10.pkg
+bigfix_client_file_dest: BESAgent-9.5.13.130.sparc_sol10.pkg
+bigfix_client_file_sum: d797ea4967f9386eb65132c781c04365eb657110cb0bebeb80ae6f0f59b6c515
+bigfix_client_file_url: http://software.bigfix.com/download/bes/95/BESAgent-9.5.13.130.sparc_sol10.pkg
