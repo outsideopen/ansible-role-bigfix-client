@@ -7,7 +7,8 @@
   when: bigfix_client_file_sum is not defined
   include_vars: "{{ ansible_os_family }}-{{ ansible_distribution_version.split('.')[0] }}-{{ ansible_architecture }}.yml"
 
-- fail:
+- name: Failing due to undetermined OS
+  fail:
     msg: OS could not be determined.
   when: bigfix_client_file_sum is not defined
 
@@ -17,12 +18,12 @@
   register: bigfix_installed
 
 - include: install.yml
-  when: not bigfix_installed.stat.exists
+  when: not bigfix_installed.stat.exists or not bigfix_update is defined
 
 - name: Download masthead from BigFix Server
   get_url:
     url: "http://{{ bigfix_client_server_name }}:{{ bigfix_client_server_port }}/masthead/masthead.afxm"
-    dest: "{{ bigfix_client_conf_dir}}/actionsite.afxm"
+    dest: "{{ bigfix_client_conf_dir }}/actionsite.afxm"
 
 - name: Start the service
   service:
