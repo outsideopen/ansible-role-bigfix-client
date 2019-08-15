@@ -1,4 +1,4 @@
 ---
-bigfix_client_file_dest: BESAgent-9.5.10.79-rhe7.ppc64le.rpm
-bigfix_client_file_sum: 45ee52a6fc30fbf0b0bbf765299fab4141559989edaabce2bbcf654e8d10d5d2
-bigfix_client_file_url: http://software.bigfix.com/download/bes/95/BESAgent-9.5.10.79-rhe7.ppc64le.rpm
+bigfix_client_file_dest: BESAgent-9.5.13.130-rhe7.ppc64le.rpm
+bigfix_client_file_sum: 877a190946d0f6c1812c554a90cd0169afb31dbbe50c78bf4fa96c020b049b3f
+bigfix_client_file_url: http://software.bigfix.com/download/bes/95/BESAgent-9.5.13.130-rhe7.ppc64le.rpm

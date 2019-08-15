@@ -1,4 +1,4 @@
 ---
-bigfix_client_file_dest: BESAgent-9.5.10.79-sle11.i686.rpm
-bigfix_client_file_sum: e23977c0de3e39abcdd24f53487eebfe46e8b796fa3d111aac54ae808b8b5941
-bigfix_client_file_url: http://software.bigfix.com/download/bes/95/BESAgent-9.5.10.79-sle11.i686.rpm
+bigfix_client_file_dest: BESAgent-9.5.13.130-sle11.i686.rpm
+bigfix_client_file_sum: 607fcd7880a7480346a909aca61fc57edab1b0621ab5156bfe81b11aa4537213
+bigfix_client_file_url: http://software.bigfix.com/download/bes/95/BESAgent-9.5.13.130-sle11.i686.rpm

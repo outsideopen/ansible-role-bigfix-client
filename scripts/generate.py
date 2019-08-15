@@ -13,10 +13,10 @@ import requests
 from bs4 import BeautifulSoup
 
 if len(sys.argv) != 3:
-    print "Missing an argument"
-    print "Usage: generate.py <version> <patch_level>"
-    print "\tversion\tThe BigFix Version"
-    print "\tpatch  \tThe BigFix Version Patch level"
+    print("Missing an argument")
+    print("Usage: generate.py <version> <patch_level>")
+    print("\tversion\tThe BigFix Version")
+    print("\tpatch  \tThe BigFix Version Patch level")
     sys.exit()
 
 # Maps the names from their full BigFix name to their download name
@@ -111,4 +111,4 @@ for tr in h3_agent.find_next_sibling().tbody.findAll('tr'):
                 f.write("---\n")
                 yaml.safe_dump(data, f, default_flow_style=False, default_style='')
     else:
-        print "Missing: %s" % file
+        print("Missing: %s" % file)
