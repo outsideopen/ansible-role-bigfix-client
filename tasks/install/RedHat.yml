@@ -1,4 +1,6 @@
 ---
 
 - name: Install BigFix Client
-  command: "rpm -ivh /tmp/{{ bigfix_client_file_dest }}"
+  yum:
+    name: "/tmp/{{ bigfix_client_file_dest }}"
+    state: present

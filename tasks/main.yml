@@ -18,7 +18,7 @@
   register: bigfix_installed
 
 - include: install.yml
-  when: not bigfix_installed.stat.exists
+  when: not bigfix_installed.stat.exists or not bigfix_update is defined
 
 - name: Download masthead from BigFix Server
   get_url:
