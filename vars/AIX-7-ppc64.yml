@@ -1,4 +1,4 @@
 ---
-bigfix_client_file_dest: BESAgent-9.5.14.73.ppc64_aix61.pkg
-bigfix_client_file_sum: 28bfb88c2c6b93ec24e773cbbef14801d4b2be9faf5032b049576075f56bab28
-bigfix_client_file_url: http://software.bigfix.com/download/bes/95/BESAgent-9.5.14.73.ppc64_aix61.pkg
+bigfix_client_file_dest: BESAgent-10.0.0.133.ppc64_aix61.pkg
+bigfix_client_file_sum: 8d27ccb4351a4d02399c551dd7fc972cca0e8d75d0a8c9322d63a6d83608366c
+bigfix_client_file_url: http://software.bigfix.com/download/bes/100/BESAgent-10.0.0.133.ppc64_aix61.pkg
