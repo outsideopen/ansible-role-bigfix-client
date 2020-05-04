@@ -1,4 +1,6 @@
 ---
 
 - name: Install BigFix Client
-  command: "pkgadd -d /tmp/{{ bigfix_client_file_name }}"
+  svr4pkg:
+    src: "/tmp/{{ bigfix_client_file_name }}"
+    state: present

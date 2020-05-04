@@ -19,6 +19,10 @@ Set the version/development kit of Java to install, along with any other necessa
     # On AIX
     bigfix_client_service_name: SBESClientd
 
+## Re-install or update
+
+You may use `bigfix_update: true` to have the client be re-installed. Useful for new versions
+
 ## Example Playbook
 
     - hosts: all

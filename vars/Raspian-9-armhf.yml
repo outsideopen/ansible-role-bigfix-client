@@ -1,0 +1,4 @@
+---
+bigfix_client_file_dest: BESAgent-10.0.0.133-raspbian9.armhf.deb
+bigfix_client_file_sum: 2e6f324ea3d3002358b5ebf9d06ba90d03e181970da0b8e4bcc13a4246f5d82f
+bigfix_client_file_url: http://software.bigfix.com/download/bes/100/BESAgent-10.0.0.133-raspbian9.armhf.deb

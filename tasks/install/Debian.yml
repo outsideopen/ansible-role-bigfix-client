@@ -1,7 +1,6 @@
 ---
 
-#- name: Check for BigFix Client
-#  command: dpkg-query -W
-
 - name: Install BigFix Client
-  command: "dpkg -i /tmp/{{ bigfix_client_file_dest }}"
+  apt:
+    deb: "/tmp/{{ bigfix_client_file_dest }}"
+    state: present
