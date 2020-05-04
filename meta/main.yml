@@ -10,20 +10,17 @@ galaxy_info:
   platforms:
     - name: Ubuntu
       versions:
-        - precise
-        - trusty
         - xenial
         - bionic
     - name: Debian
       versions:
-        - wheezy
         - jessie
         - stretch
     - name: EL
       versions:
-        - 5
         - 6
         - 7
+        - 8
     - name: SLES
       versions:
         - 11
@@ -31,7 +28,6 @@ galaxy_info:
         - 15
     - name: Solaris
       versions:
-        - 10
         - 11.0
         - 11.1
         - 11.2
