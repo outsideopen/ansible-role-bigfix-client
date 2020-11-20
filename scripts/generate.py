@@ -25,6 +25,8 @@ os_map = {
     "Red Hat Enterprise Linux": "RedHat",
     # this could be problematic..
     "SUSE Linux Enterprise": "Suse",
+    "Amazon Linux 2": "Amazon",
+    "Solaris (package p5p)": "Solaris-p5p",
 }
 
 # Maps the versions from their full BigFix name to their download name
@@ -33,6 +35,7 @@ ver_map = {
     "6.1 (TL4 or greater)" : "6",
     "7.x" : "7",
     "5 (Update 5 or greater)" : "5",
+    "Amazon Linux 2": "2",
 }
 
 version   = sys.argv[1]
@@ -84,17 +87,21 @@ for tr in h3_agent.find_next_sibling().tbody.findAll('tr'):
     tds = tr.findAll('td')
     file = os.path.basename(tds[4].a.attrs['href'])
     if file in sums:
+        _major = None
         _os = tds[0].text
         if _os == "Mac OSX (.pkg)" or _os == "Windows":
             continue
+        if _os in ver_map:
+            _major = ver_map[_os]
         if _os in os_map:
             _os = os_map[_os]
 
-        _major = tds[1].text
-        if ',' in _major:
-            _major = _major.split(", ")
-        else:
-            _major = [_major]
+        if not _major:
+            _major = tds[1].text
+            if ',' in _major:
+                _major = _major.split(", ")
+            else:
+                _major = [_major]
 
         _arch = tds[2].text.replace(" (little-endian)", "").replace(" (big-endian)", "")
         for m in _major:
