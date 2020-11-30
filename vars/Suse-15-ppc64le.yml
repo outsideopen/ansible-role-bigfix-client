@@ -1,4 +1,4 @@
 ---
-bigfix_client_file_dest: BESAgent-10.0.0.133-sle12.ppc64le.rpm
-bigfix_client_file_sum: ff3c93b29653057b0d8178c2d7965ac3eb461d7c86c405a29521748d8ce6419f
-bigfix_client_file_url: http://software.bigfix.com/download/bes/100/BESAgent-10.0.0.133-sle12.ppc64le.rpm
+bigfix_client_file_dest: BESAgent-10.0.1.41-sle12.ppc64le.rpm
+bigfix_client_file_sum: dbaf2e78ba520539f60e0dae756138e3d4cef8106259813033cfeea860c42689
+bigfix_client_file_url: http://software.bigfix.com/download/bes/100/BESAgent-10.0.1.41-sle12.ppc64le.rpm
