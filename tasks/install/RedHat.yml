@@ -1,4 +1,8 @@
 ---
+- name: Install BigFix GPG Key
+  rpm_key:
+    state: present
+    key: http://software.bigfix.com/download/bes/95/RPM-GPG-KEY-BigFix-9-V2
 
 - name: Install BigFix Client
   yum:
