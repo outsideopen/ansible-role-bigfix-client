@@ -1,4 +1,4 @@
 ---
-bigfix_client_file_dest: BESAgent-10.0.1.41.x86_sol11.pkg
-bigfix_client_file_sum: 78b682cc4ce0b9901691c9bac53fd6b98a1d4ae0fb2070016e8d599ba484e9b5
-bigfix_client_file_url: http://software.bigfix.com/download/bes/100/BESAgent-10.0.1.41.x86_sol11.pkg
+bigfix_client_file_dest: BESAgent-10.0.4.32.x86_sol11.pkg
+bigfix_client_file_sum: dc609018e8a3c6e24fd594c4b83b268a1a692f4a40633db83686446946e40620
+bigfix_client_file_url: https://software.bigfix.com/download/bes/100/BESAgent-10.0.4.32.x86_sol11.pkg

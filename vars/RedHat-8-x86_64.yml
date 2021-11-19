@@ -1,4 +1,4 @@
 ---
-bigfix_client_file_dest: BESAgent-10.0.1.41-rhe6.x86_64.rpm
-bigfix_client_file_sum: 7026765046d8c5213043720bbed90094f37aab8be654baa3400244015fb67945
-bigfix_client_file_url: http://software.bigfix.com/download/bes/100/BESAgent-10.0.1.41-rhe6.x86_64.rpm
+bigfix_client_file_dest: BESAgent-10.0.4.32-rhe6.x86_64.rpm
+bigfix_client_file_sum: ea8f96741a60966b43f7ae1ccf9b9f2b0c4ac2ebaa2b4466ea12db9cd0ca5590
+bigfix_client_file_url: https://software.bigfix.com/download/bes/100/BESAgent-10.0.4.32-rhe6.x86_64.rpm
