@@ -21,31 +21,33 @@ if len(sys.argv) != 3:
 
 # Maps the names from their full BigFix name to their download name
 os_map = {
-    "Oracle Enterprise Linux" : "OracleLinux",
+    "Oracle Enterprise Linux": "OracleLinux",
     "Red Hat Enterprise Linux": "RedHat",
     # this could be problematic..
     "SUSE Linux Enterprise": "Suse",
     "Amazon Linux 2": "Amazon",
     "Solaris (package p5p)": "Solaris-p5p",
+    "Rocky Linux": "Rocky"
 }
 
 # Maps the versions from their full BigFix name to their download name
 ver_map = {
-    "Vista / 2008 (or greater)" : '8',
-    "6.1 (TL4 or greater)" : "6",
-    "7.x" : "7",
-    "5 (Update 5 or greater)" : "5",
+    "Vista / 2008 (or greater)": '8',
+    "6.1 (TL4 or greater)": "6",
+    "7.x": "7",
+    "5 (Update 5 or greater)": "5",
     "Amazon Linux 2": "2",
 }
 
-version   = sys.argv[1]
-patch     = sys.argv[2]
-path      = os.path.dirname(os.path.abspath(__file__))
+version = sys.argv[1]
+patch = sys.argv[2]
+path = os.path.dirname(os.path.abspath(__file__))
 info_path = "%s/data/%s.%s" % (path, version, patch)
 
 base_url = "http://support.bigfix.com/bes/release/%s/patch%s/" % (version, patch)
 if not os.path.exists(info_path):
     os.makedirs(info_path, 0o755, exist_ok=True)
+
 
 def download_file(url, target):
     if not os.path.exists(target):
@@ -55,6 +57,7 @@ def download_file(url, target):
         for chunk in response.iter_content(chunk_size=512):
             if chunk:
                 file.write(chunk)
+
 
 # download the SUMS
 sums = {}
@@ -80,7 +83,7 @@ if not os.path.exists(vars_path):
 
 # retrieve the table row data
 html = BeautifulSoup(data, "html.parser")
-h3_agent = html.body.find('h3', attrs={"id":"agent"})
+h3_agent = html.body.find('h3', attrs={"id": "agent"})
 info = {}
 for tr in h3_agent.find_next_sibling().tbody.findAll('tr'):
     obj = {}
@@ -109,7 +112,7 @@ for tr in h3_agent.find_next_sibling().tbody.findAll('tr'):
                 m = ver_map[m]
 
             out_file = "%s/%s-%s-%s.yml" % (vars_path, _os, m, _arch)
-            data ={
+            data = {
                 "bigfix_client_file_dest": file,
                 "bigfix_client_file_url": tds[4].a.attrs['href'],
                 "bigfix_client_file_sum": sums[file]
