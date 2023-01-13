@@ -20,10 +20,16 @@
 - include: install.yml
   when: not bigfix_installed.stat.exists or bigfix_update is defined
 
+- name: determine if masthead already exists
+  stat:
+    path: "{{ bigfix_client_conf_dir }}/actionsite.afxm"
+  register: masthead_file
+
 - name: Download masthead from BigFix Server
   get_url:
     url: "http://{{ bigfix_client_server_name }}:{{ bigfix_client_server_port }}/masthead/masthead.afxm"
     dest: "{{ bigfix_client_conf_dir }}/actionsite.afxm"
+  when: not masthead_file.stat.exists
 
 - name: Start the service
   service:
