@@ -1,4 +1,4 @@
 ---
-bigfix_client_file_dest: BESAgent-10.0.4.32-BigFix_MacOS11.0.pkg
-bigfix_client_file_sum: c950f4444e65e1c560c7665cb9922bcc4a8408d4aae3ddb64a6ad26d1a0f3301
-bigfix_client_file_url: https://software.bigfix.com/download/bes/100/BESAgent-10.0.4.32-BigFix_MacOS11.0.pkg
+bigfix_client_file_dest: BESAgent-10.0.8.37-BigFix_MacOS11.0.pkg
+bigfix_client_file_sum: 22fbbd0f93f466c5365a537d6f5577926c639090269ed699a6ddfab3d93cd193
+bigfix_client_file_url: https://software.bigfix.com/download/bes/100/BESAgent-10.0.8.37-BigFix_MacOS11.0.pkg
