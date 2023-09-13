@@ -26,6 +26,7 @@ os_map = {
     # this could be problematic..
     "SUSE Linux Enterprise": "Suse",
     "Amazon Linux 2": "Amazon",
+    "Amazon Linux": "Amazon",
     "Solaris (package p5p)": "Solaris-p5p",
     "Rocky Linux": "Rocky"
 }
@@ -35,8 +36,7 @@ ver_map = {
     "Vista / 2008 (or greater)": '8',
     "6.1 (TL4 or greater)": "6",
     "7.x": "7",
-    "5 (Update 5 or greater)": "5",
-    "Amazon Linux 2": "2",
+    "5 (Update 5 or greater)": "5"
 }
 
 version = sys.argv[1]
