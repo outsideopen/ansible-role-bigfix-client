@@ -27,7 +27,7 @@ jobs:
         ports:
           - 80:80
         volumes:
-          - ${{ GITHUB_WORKSPACE }}/molecule/default/files:/usr/share/nginx/html
+          - "${GITHUB_WORKSPACE}/molecule/default/files:/usr/share/nginx/html:ro"
     strategy:
       fail-fast: false
       matrix:
