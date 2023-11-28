@@ -1,6 +1,6 @@
 ---
 
 - name: Install BigFix Client
-  svr4pkg:
+  community.general.svr4pkg: # noqa: args[module]
     src: "/tmp/{{ bigfix_client_file_name }}"
     state: present

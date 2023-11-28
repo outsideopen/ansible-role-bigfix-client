@@ -1,0 +1,11 @@
+---
+- name: Verify
+  hosts: all:!nginx
+  gather_facts: false
+  tasks:
+    # While this could be misleading the client won't start because our masthead is not valid
+    - name: Check if /etc/opt/BESClient/.ansible_installed exists
+      ansible.builtin.stat:
+        path: /etc/opt/BESClient/.ansible_installed
+      register: __installed
+      failed_when: not __installed.stat.exists

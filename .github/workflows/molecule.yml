@@ -1,0 +1,49 @@
+---
+name: Ansible Molecule
+
+on:
+  push:
+    tags_ignore:
+      - '*'
+  pull_request:
+  schedule:
+    - cron: '28 15 13 * *'
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: molecule
+        uses: ansible/ansible-lint@main
+  test:
+    needs:
+      - lint
+    runs-on: ubuntu-latest
+    services:
+      nginx:
+        image: nginx
+        ports:
+          - 80:80
+        volumes:
+          - molecule/default/files:/usr/share/nginx/html
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+          - image: amazonlinux
+            tag: latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+        with:
+          path: "${{ github.repository }}"
+      - name: molecule
+        uses: robertdebock/molecule-action@6.0.1
+        with:
+          image: ${{ matrix.config.image }}
+          tag: ${{ matrix.config.tag }}
+          options: "--parallel all"
+        env:
+          TOX_PARALLEL_NO_SPINNER: 1
