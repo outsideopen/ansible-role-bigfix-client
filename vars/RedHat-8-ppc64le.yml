@@ -1,4 +1,4 @@
 ---
-bigfix_client_file_dest: BESAgent-10.0.1.41-rhe7.ppc64le.rpm
-bigfix_client_file_sum: 795365d88327d38e9cd1464836382b984481a67468bc246cef611fcebce7b0e1
-bigfix_client_file_url: http://software.bigfix.com/download/bes/100/BESAgent-10.0.1.41-rhe7.ppc64le.rpm
+bigfix_client_file_dest: BESAgent-10.0.9.21-rhe7.ppc64le.rpm
+bigfix_client_file_sum: bcc94a89c9eac33b3d9b73d81a7390e737c0c657b0f1c2bbc48829e758d2142f
+bigfix_client_file_url: https://software.bigfix.com/download/bes/100/BESAgent-10.0.9.21-rhe7.ppc64le.rpm
