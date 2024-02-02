@@ -1,6 +1,7 @@
 ---
 dependencies: []
 galaxy_info:
+  namespace: outsideopen
   role_name: bigfix_client
   author: David Lundgren
   company: Outside Open
