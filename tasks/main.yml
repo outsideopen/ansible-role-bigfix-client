@@ -1,11 +1,13 @@
 ---
-
-- name: Load OS specific vars
-  include_vars: "{{ ansible_distribution }}-{{ ansible_distribution_version.split('.')[0] }}-{{ ansible_architecture }}.yml"
-
-- name: Load OS Family specific vars
-  when: bigfix_client_file_sum is not defined
-  include_vars: "{{ ansible_os_family }}-{{ ansible_distribution_version.split('.')[0] }}-{{ ansible_architecture }}.yml"
+- name: Load vars based on OS distribution or family
+  include_vars: "{{ lookup('ansible.builtin.first_found', params) }}"
+  vars:
+    params:
+      files:
+        - "{{ bigfix_client_override_vars[bigfix_client_distribution] | default(bigfix_client_distribution) }}.yml"
+        - "{{ bigfix_client_override_vars[bigfix_client_os_family] | default(bigfix_client_os_family) }}.yml"
+      paths:
+        - 'vars'
 
 - name: Failing due to undetermined OS
   fail:
@@ -17,10 +19,11 @@
     path: "{{ bigfix_client_conf_dir }}/.ansible_installed"
   register: bigfix_installed
 
-- include: install.yml
+- name: Run the BigFix OS install
+  include_tasks: install.yml
   when: not bigfix_installed.stat.exists or bigfix_update is defined
 
-- name: determine if masthead already exists
+- name: Determine if masthead already exists
   stat:
     path: "{{ bigfix_client_conf_dir }}/actionsite.afxm"
   register: masthead_file

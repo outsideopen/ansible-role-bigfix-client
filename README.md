@@ -19,6 +19,16 @@ Set the version/development kit of Java to install, along with any other necessa
     # On AIX
     bigfix_client_service_name: SBESClientd
 
+## Overriding a detect OS installer
+
+You can now set `bigfix_client_override_vars` as a mapping from one detect os to another.
+
+```yaml
+---
+bigfix_client_override_vars:
+  Debian-12-x86_64: Debian-11-x86_64
+```
+
 ## Re-install or update
 
 You may use `bigfix_update: true` to have the client be re-installed. Useful for new versions

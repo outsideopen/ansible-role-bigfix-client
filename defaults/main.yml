@@ -1,5 +1,14 @@
 ---
 bigfix_client_conf_dir: /etc/opt/BESClient
-bigfix_client_server_name: bigfix.example.com
+bigfix_client_server_name: bigfix.local
 bigfix_client_server_port: 52311
 bigfix_client_service_name: besclient
+
+# Allows the detect os distribution/family to be remapped
+bigfix_client_override_vars: {}
+
+##########
+#### NOTE: These change the behavior of the tasks and shouldn't need to be set.
+##########
+bigfix_client_distribution: "{{ ansible_distribution }}-{{ ansible_distribution_version.split('.')[0] }}-{{ ansible_architecture }}"
+bigfix_client_os_family: "{{ ansible_os_family }}-{{ ansible_distribution_version.split('.')[0] }}-{{ ansible_architecture }}"
