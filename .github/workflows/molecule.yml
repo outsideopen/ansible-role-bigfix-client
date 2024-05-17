@@ -36,7 +36,7 @@ jobs:
       - name: molecule
         uses: robertdebock/molecule-action@6.0.1
         with:
-          MOLECULE_DISTRO: ${{ matrix.config.image }}
+          image: ${{ matrix.config.image }}
           tag: ${{ matrix.config.tag }}
           options: "--parallel all"
         env:
