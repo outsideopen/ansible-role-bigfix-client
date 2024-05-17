@@ -5,14 +5,17 @@ driver:
   name: docker
 platforms:
   - name: nginx
-    image: nginx
-  - name: "bigfix-client-${image:-amazonlinux}-${tag:-latest}${TOX_ENVNAME}"
-    image: "${namespace:-robertdebock}/${image:-amazonlinux}:${tag:-latest}"
-    command: /sbin/init
-    volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    image: nginx:mainline-alpine-slim
+  - name: "bigfix-client-${MOLECULE_DISTRO:-ubuntu2204}-${tag:-latest}${TOX_ENVNAME}"
+    image: "geerlingguy/docker-${MOLECULE_DISTRO:-ubuntu2204}-ansible:latest"
     privileged: true
     pre_build_image: true
+    cgroupns_mode: host
+    command: ${MOLECULE_DOCKER_COMMAND:-""}
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+      - /run
+      - /run/lock
 provisioner:
   name: ansible
   config_options:

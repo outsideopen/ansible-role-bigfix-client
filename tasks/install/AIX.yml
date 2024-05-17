@@ -2,4 +2,4 @@
 
 - name: Install BigFix Client
   ansible.builtin.command:
-    cmd: "installp –agqYXd /tmp/{{ bigfix_client_file_name }} BESClient" # noqa: no-changed-when
+    cmd: "installp –agqYXd /tmp/{{ bigfix_client_file_name }} BESClient"  # noqa: no-changed-when

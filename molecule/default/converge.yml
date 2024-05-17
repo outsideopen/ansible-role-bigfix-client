@@ -9,7 +9,7 @@
         update_cache: true
 
     - name: Copy the debug masthead
-      ansible.builtin.copy: # noqa: risky-file-permissions
+      ansible.builtin.copy:  # noqa: risky-file-permissions
         src: masthead/
         dest: /usr/share/nginx/html/masthead
 
@@ -17,6 +17,8 @@
       ansible.builtin.service:
         name: nginx
         state: restarted
+      # we don't care about the idempotence on this
+      changed_when: false
 
 - name: Converge
   hosts: all:!nginx

@@ -1,0 +1,6 @@
+---
+- name: Restart bigfix-client
+  ansible.builtin.service:
+    name: "{{ bigfix_client_service_name }}"
+    state: restarted
+    enabled: true

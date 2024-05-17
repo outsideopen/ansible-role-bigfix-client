@@ -1,11 +1,11 @@
 ---
 
 - name: Load OS specific vars
-  ansible.builtin.include_vars: "{{ ansible_distribution }}-{{ ansible_distribution_version.split('.')[0] }}-{{ ansible_architecture }}.yml"
+  ansible.builtin.include_vars: "{{ ansible_distribution }}-{{ __bigfix_ansible_distro_arch }}.yml"
 
 - name: Load OS Family specific vars
   when: bigfix_client_file_sum is not defined
-  ansible.builtin.include_vars: "{{ ansible_os_family }}-{{ ansible_distribution_version.split('.')[0] }}-{{ ansible_architecture }}.yml"
+  ansible.builtin.include_vars: "{{ ansible_os_family }}-{{ __bigfix_ansible_distro_arch }}.yml"
 
 - name: Failing due to undetermined OS
   ansible.builtin.fail:
@@ -27,14 +27,10 @@
   register: masthead_file
 
 - name: Download masthead from BigFix Server
+  when: not masthead_file.stat.exists
   ansible.builtin.get_url:
     url: "http://{{ bigfix_client_server_name }}:{{ bigfix_client_server_port }}/masthead/masthead.afxm"
     dest: "{{ bigfix_client_conf_dir }}/actionsite.afxm"
     mode: "0644"
-  when: not masthead_file.stat.exists
-
-- name: Start the service
-  ansible.builtin.service:
-    name: "{{ bigfix_client_service_name }}"
-    state: restarted
-    enabled: true
+  notify:
+    - Restart bigfix-client

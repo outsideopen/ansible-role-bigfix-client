@@ -1,7 +1,7 @@
 ---
 name: Ansible Molecule
-
-on:
+on:  # yamllint disable-line rule:truthy
+  workflow_dispatch:
   push:
     tags_ignore:
       - '*'
@@ -21,19 +21,13 @@ jobs:
     needs:
       - lint
     runs-on: ubuntu-latest
-#    services:
-#      nginx:
-#        image: nginx
-#        ports:
-#          - 80:80
-#        volumes:
-#          - "${GITHUB_WORKSPACE}/molecule/default/files:/usr/share/nginx/html:ro"
     strategy:
       fail-fast: false
       matrix:
         config:
-          - image: amazonlinux
-            tag: latest
+          - image: amazonlinux2
+          - image: ubuntu2204
+          - image: rockylinux8
     steps:
       - name: checkout
         uses: actions/checkout@v4
@@ -42,7 +36,7 @@ jobs:
       - name: molecule
         uses: robertdebock/molecule-action@6.0.1
         with:
-          image: ${{ matrix.config.image }}
+          MOLECULE_DISTRO: ${{ matrix.config.image }}
           tag: ${{ matrix.config.tag }}
           options: "--parallel all"
         env:

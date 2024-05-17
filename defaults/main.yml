@@ -3,3 +3,5 @@ bigfix_client_conf_dir: /etc/opt/BESClient
 bigfix_client_server_name: bigfix.example.com
 bigfix_client_server_port: 52311
 bigfix_client_service_name: besclient
+
+__bigfix_ansible_distro_arch: "{{ ansible_distribution_version.split('.')[0] }}-{{ ansible_architecture }}"
