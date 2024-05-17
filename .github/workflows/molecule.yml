@@ -20,7 +20,7 @@ jobs:
   test:
     needs:
       - lint
-    runs-on: ubuntu-latest
+    runs-on: robertdebock/github-action-molecule:6.0.1
     strategy:
       fail-fast: false
       matrix:
@@ -34,10 +34,8 @@ jobs:
         with:
           path: "${{ github.repository }}"
       - name: molecule
-        uses: robertdebock/molecule-action@6.0.1
-        with:
-          image: ${{ matrix.config.image }}
-          tag: ${{ matrix.config.tag }}
-          options: "--parallel all"
+        run: molecule test
         env:
-          TOX_PARALLEL_NO_SPINNER: 1
+          PY_COLORS: '1'
+          ANSIBLE_FORCE_COLOR: '1'
+          image: ${{ matrix.image }}
