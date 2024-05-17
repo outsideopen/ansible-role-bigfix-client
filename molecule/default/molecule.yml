@@ -6,8 +6,8 @@ driver:
 platforms:
   - name: nginx
     image: nginx:mainline-alpine-slim
-  - name: "bigfix-client-${MOLECULE_DISTRO:-ubuntu2204}-${tag:-latest}${TOX_ENVNAME}"
-    image: "geerlingguy/docker-${MOLECULE_DISTRO:-ubuntu2204}-ansible:latest"
+  - name: "bigfix-client-${image:-ubuntu2204}-${tag:-latest}${TOX_ENVNAME}"
+    image: "geerlingguy/docker-${image:-ubuntu2204}-ansible:latest"
     privileged: true
     pre_build_image: true
     cgroupns_mode: host
