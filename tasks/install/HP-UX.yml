@@ -1,5 +1,5 @@
 ---
 
 - name: Install BigFix Client
-  ansible.builtin.command: # noqa: no-changed-when
+  ansible.builtin.command:  # noqa: no-changed-when
     cmd: "/usr/sbin/swinstall -s {{ ansible_hostname }}:/tmp/{{ bigfix_client_file_name }} BESAgent"

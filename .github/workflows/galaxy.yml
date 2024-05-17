@@ -1,20 +1,16 @@
 ---
 name: Release to Ansible Galaxy
-
-on:
-  push:
-    tags:
-      - '*'
-  schedule:
-    - cron: '1 10 14 * *'
+on:  # yamllint disable-line rule:truthy
+  workflow_dispatch:
+  release:
+    types: [published]
 
 jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
-        uses: actions/checkout@v4
-      - name: galaxy
-        uses: robertdebock/galaxy-action@1.2.1
+      - name: publish to galaxy
+        uses: ansible-actions/ansible-galaxy-action@v1.2.0
         with:
+          galaxy_version: ${{ github.ref_name }}
           galaxy_api_key: ${{ secrets.galaxy_api_key }}
