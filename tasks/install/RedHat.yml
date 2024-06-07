@@ -5,6 +5,6 @@
     key: http://software.bigfix.com/download/bes/95/RPM-GPG-KEY-BigFix-9-V2
 
 - name: Install BigFix Client
-  ansible.builtin.yum:
+  ansible.builtin.dnf:
     name: "/tmp/{{ bigfix_client_file_dest }}"
     state: present
