@@ -1,4 +1,4 @@
 ---
-bigfix_client_file_dest: BESAgent-10.0.10.46-ubuntu10.amd64.deb
-bigfix_client_file_sum: c88eafc4186f351b9c5d174617c7f3fa39e06f8bd0a66eb197e561e41dac34a7
-bigfix_client_file_url: https://software.bigfix.com/download/bes/100/BESAgent-10.0.10.46-ubuntu10.amd64.deb
+bigfix_client_file_dest: BESAgent-10.0.11.108-ubuntu10.amd64.deb
+bigfix_client_file_sum: b21ef424084bcfb32c0a12f2fa65c5064acaa83fc2a1027844a3c7c909622c95
+bigfix_client_file_url: https://software.bigfix.com/download/bes/100/BESAgent-10.0.11.108-ubuntu10.amd64.deb

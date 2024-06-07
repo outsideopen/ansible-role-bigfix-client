@@ -1,4 +1,4 @@
 ---
-bigfix_client_file_dest: BESAgent-10.0.10.46-al2.aarch64.rpm
-bigfix_client_file_sum: 6914b1321d02973b2c4284d6e89fdefd2ce4b2748ebd43cf95aa0fa25991827b
-bigfix_client_file_url: https://software.bigfix.com/download/bes/100/BESAgent-10.0.10.46-al2.aarch64.rpm
+bigfix_client_file_dest: BESAgent-10.0.11.108-al2.aarch64.rpm
+bigfix_client_file_sum: 093e33aabef7affde8ee0769e5d560ca57e5bf8f0815bcbf523f5753da29406f
+bigfix_client_file_url: https://software.bigfix.com/download/bes/100/BESAgent-10.0.11.108-al2.aarch64.rpm
