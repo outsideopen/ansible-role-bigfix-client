@@ -22,10 +22,10 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        config:
-          - image: amazonlinux2
-          - image: ubuntu2204
-          - image: rockylinux8
+        image:
+          - amazonlinux2
+          - ubuntu2204
+          - rockylinux8
     steps:
       - name: checkout
         uses: actions/checkout@v4

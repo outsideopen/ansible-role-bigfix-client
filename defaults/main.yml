@@ -4,4 +4,6 @@ bigfix_client_server_name: bigfix.example.com
 bigfix_client_server_port: 52311
 bigfix_client_service_name: besclient
 
+bigfix_client_masthead_url: "http://{{ bigfix_client_server_name }}:{{ bigfix_client_server_port }}/masthead/masthead.afxm"
+
 __bigfix_ansible_distro_arch: "{{ ansible_distribution_version.split('.')[0] }}-{{ ansible_architecture }}"
