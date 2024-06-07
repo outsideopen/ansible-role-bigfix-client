@@ -31,8 +31,8 @@
 - name: Download masthead from BigFix Server
   when: not masthead_file.stat.exists
   ansible.builtin.get_url:
-    url: "http://{{ bigfix_client_server_name }}:{{ bigfix_client_server_port }}/masthead/masthead.afxm"
+    url: "{{ bigfix_client_masthead_url }}"
     dest: "{{ bigfix_client_conf_dir }}/actionsite.afxm"
-    mode: "0644"
+    mode: "644"
   notify:
     - Restart bigfix-client
