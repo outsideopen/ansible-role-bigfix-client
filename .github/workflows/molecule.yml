@@ -6,8 +6,6 @@ on:  # yamllint disable-line rule:truthy
     tags_ignore:
       - '*'
   pull_request:
-  schedule:
-    - cron: '28 15 13 * *'
 
 jobs:
   lint:
@@ -22,21 +20,32 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        image:
-          - amazonlinux2
-          - ubuntu2204
-          - rockylinux8
+        # current gen
+        - image: amazonlinux2023
+        - image: rockylinux9
+        # previous gen
+        - image: ubuntu2204
+        # legacy
+        - image: amazonlinux2
+          reqs: ansible-core==2.16.11
+
+        # not using centos8 due to systemd issues (with 2.16.11+)
+        - image: centos7
+          reqs: ansible-core==2.16.11
     steps:
       - name: checkout
         uses: actions/checkout@v4
         with:
           path: "${{ github.repository }}"
+
       - name: Set up Python 3
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
+
       - name: Install test dependencies
-        run: pip install ansible molecule-docker docker requests==2.31.0
+        run: pip install 'molecule-plugins[docker]' requests==2.31.0 ${{ matrix.reqs }}
+
       - name: molecule
         run: molecule test
         env:

@@ -1,0 +1,35 @@
+---
+- name: Install BigFix Client (yum)
+  when:
+    - ansible_version.full is version('2.16', '<')
+  ansible.builtin.yum:
+    name: "/tmp/{{ bigfix_client_file_dest }}"
+    state: present
+
+- name: Install BigFix Client (manual)
+  when:
+    - ansible_version.full is version('2.16', '>=')
+  block:
+    # idempotency check
+    - name: Check for BigFix Client
+      ansible.builtin.raw: "yum list installed | grep BESAgent | awk '{print$2}'"
+      register: _bigfix_installed
+      failed_when: false
+      changed_when: false
+      ignore_errors: true
+
+    - name: Install BigFix Client
+      when:
+        # grep/awk failed or version mismatch
+        - _bigfix_installed.rc == 1 or _bigfix_installed.stdout == "" or _bigfix_installed.stdout_lines[0] not in bigfix_client_file_dest
+      ansible.builtin.shell:
+        cmd: "yum install -y /tmp/{{ bigfix_client_file_dest }}"
+        creates: "{{ bigfix_client_install_dir }}"
+
+    # ensure it was installed
+    - name: Version doesn't match after installation
+      ansible.builtin.raw: "yum list installed | grep -i bes | awk '{print $2}'"
+      register: _bigfix_installed
+      failed_when: _bigfix_installed.stdout == "" or _bigfix_installed.stdout_lines[0] not in bigfix_client_file_dest
+      changed_when: false
+      ignore_errors: true

@@ -1,4 +1,6 @@
 ---
+
+# From Bigfix: Beginning with IEM 9.0 the directory /etc/opt/BESClient/ is not automatically created by the installer.
 - name: Ensure configuration directory exists
   ansible.builtin.file:
     name: "{{ bigfix_client_conf_dir }}"

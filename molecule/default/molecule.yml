@@ -11,7 +11,7 @@ platforms:
       - ${PWD}/molecule/default/files/masthead:/usr/share/nginx/html/masthead
       - ${PWD}/molecule/default/files/masthead/masthead.afxm:/usr/share/nginx/html/masthead/masthead.afxm
   - name: "bigfix-client-${image:-ubuntu2204}-${tag:-latest}${TOX_ENVNAME}"
-    image: "geerlingguy/docker-${image:-ubuntu2204}-ansible:latest"
+    image: "geerlingguy/docker-${image:-ubuntu2204}-ansible:${tag:-latest}"
     privileged: true
     pre_build_image: true
     cgroupns_mode: host
