@@ -5,6 +5,8 @@
   ansible.builtin.yum:
     name: "/tmp/{{ bigfix_client_file_dest }}"
     state: present
+  tags:
+    - skip_ansible_lint
 
 - name: Install BigFix Client (manual)
   when:
@@ -17,14 +19,20 @@
       failed_when: false
       changed_when: false
       ignore_errors: true
+      tags:
+        - skip_ansible_lint
 
     - name: Install BigFix Client
+      # yamllint disable rule:line-length
       when:
         # grep/awk failed or version mismatch
         - _bigfix_installed.rc == 1 or _bigfix_installed.stdout == "" or _bigfix_installed.stdout_lines[0] not in bigfix_client_file_dest
+      # yamllint enable rule:line-length
       ansible.builtin.shell:
         cmd: "yum install -y /tmp/{{ bigfix_client_file_dest }}"
         creates: "{{ bigfix_client_install_dir }}"
+      tags:
+        - skip_ansible_lint
 
     # ensure it was installed
     - name: Version doesn't match after installation
@@ -33,3 +41,5 @@
       failed_when: _bigfix_installed.stdout == "" or _bigfix_installed.stdout_lines[0] not in bigfix_client_file_dest
       changed_when: false
       ignore_errors: true
+      tags:
+        - skip_ansible_lint
