@@ -22,10 +22,10 @@ jobs:
       matrix:
         image:
           # current gen
-          - image: amazonlinux2023
-          - image: rockylinux9
+          - amazonlinux2023
+          - rockylinux9
           # previous gen
-          - image: ubuntu2204
+          - ubuntu2204
         include:
           # test legacy os
           - image: amazonlinux2
