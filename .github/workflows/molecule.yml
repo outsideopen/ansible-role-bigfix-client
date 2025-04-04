@@ -47,7 +47,7 @@ jobs:
         run: pip install molecule-docker ${{ matrix.reqs }}
 
       - name: create docker network for molecule
-        run: docker netork create molecule
+        run: docker network create molecule
 
       - name: molecule
         run: molecule test
