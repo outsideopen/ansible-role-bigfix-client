@@ -81,7 +81,7 @@ vars_path = "%s/vars" % (path)
 if not os.path.exists(vars_path):
     os.mkdir(vars_path, 0o755)
 
-ignore_os = [
+ignored_os_names = [
     "Mac OSX (.pkg)",
     "Mac OS (.pkg)",
     "Windows"
@@ -97,7 +97,7 @@ for tr in h3_agent.find_next_sibling().tbody.find_all('tr'):
     if file in sums:
         _major = None
         _os = tds[0].text
-        if _os in ignore_os:
+        if _os in ignored_os_names:
             continue
         if _os in ver_map:
             _major = ver_map[_os]
