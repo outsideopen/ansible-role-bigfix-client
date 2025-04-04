@@ -46,11 +46,13 @@ jobs:
       - name: Install test dependencies
         run: pip install molecule-docker ${{ matrix.reqs }}
 
+      - name: create docker network for molecule
+        run: docker netork create molecule
+
       - name: molecule
         run: molecule test
         env:
           PY_COLORS: '1'
           ANSIBLE_FORCE_COLOR: '1'
           image: "${{ matrix.image }}"
-          network: "${{ job.container.network }}"
         working-directory: "${{ github.repository }}"
