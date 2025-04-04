@@ -44,7 +44,7 @@ jobs:
           python-version: '3.x'
 
       - name: Install test dependencies
-        run: pip install 'molecule-plugins[docker]' requests==2.31.0 ${{ matrix.reqs }}
+        run: pip install molecule-docker ${{ matrix.reqs }}
 
       - name: molecule
         run: molecule test

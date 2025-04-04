@@ -34,5 +34,6 @@
     url: "{{ bigfix_client_masthead_url }}"
     dest: "{{ bigfix_client_conf_dir }}/actionsite.afxm"
     mode: "644"
+    validate_certs: "{{ bigfix_client_server_validate_certs | default(true) }}"
   notify:
     - Restart bigfix-client
