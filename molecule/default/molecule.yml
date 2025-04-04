@@ -1,0 +1,32 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+platforms:
+  - name: nginx
+    image: nginx:mainline-alpine-slim
+    command: nginx -g 'daemon off;'
+    volumes:
+      - ${PWD}/molecule/default/files/masthead:/usr/share/nginx/html/masthead
+      - ${PWD}/molecule/default/files/masthead/masthead.afxm:/usr/share/nginx/html/masthead/masthead.afxm
+    networks:
+      - name: "molecule"
+  - name: "bigfix-client-${image:-ubuntu2204}-${tag:-latest}${TOX_ENVNAME}"
+    image: "geerlingguy/docker-${image:-ubuntu2204}-ansible:${tag:-latest}"
+    privileged: true
+    pre_build_image: true
+    cgroupns_mode: host
+    command: ${MOLECULE_DOCKER_COMMAND:-""}
+    networks:
+      - name: "molecule"
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+      - /run
+      - /run/lock
+provisioner:
+  name: ansible
+scenario:
+  name: default
+verifier:
+  name: ansible

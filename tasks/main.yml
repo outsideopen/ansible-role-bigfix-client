@@ -1,6 +1,6 @@
 ---
 - name: Load vars based on OS distribution or family
-  include_vars: "{{ lookup('ansible.builtin.first_found', params) }}"
+  ansible.builtin.include_vars: "{{ lookup('ansible.builtin.first_found', params) }}"
   vars:
     params:
       files:
@@ -10,32 +10,30 @@
         - 'vars'
 
 - name: Failing due to undetermined OS
-  fail:
+  ansible.builtin.fail:
     msg: OS could not be determined.
   when: bigfix_client_file_sum is not defined
 
 - name: Check for BigFix
-  stat:
+  ansible.builtin.stat:
     path: "{{ bigfix_client_conf_dir }}/.ansible_installed"
   register: bigfix_installed
 
 - name: Run the BigFix OS install
-  include_tasks: install.yml
   when: not bigfix_installed.stat.exists or bigfix_update is defined
+  ansible.builtin.include_tasks: install.yml
 
 - name: Determine if masthead already exists
-  stat:
+  ansible.builtin.stat:
     path: "{{ bigfix_client_conf_dir }}/actionsite.afxm"
   register: masthead_file
 
 - name: Download masthead from BigFix Server
-  get_url:
-    url: "http://{{ bigfix_client_server_name }}:{{ bigfix_client_server_port }}/masthead/masthead.afxm"
-    dest: "{{ bigfix_client_conf_dir }}/actionsite.afxm"
   when: not masthead_file.stat.exists
-
-- name: Start the service
-  service:
-    name: "{{ bigfix_client_service_name }}"
-    state: restarted
-    enabled: true
+  ansible.builtin.get_url:
+    url: "{{ bigfix_client_masthead_url }}"
+    dest: "{{ bigfix_client_conf_dir }}/actionsite.afxm"
+    mode: "644"
+    validate_certs: "{{ bigfix_client_server_validate_certs | default(true) }}"
+  notify:
+    - Restart bigfix-client

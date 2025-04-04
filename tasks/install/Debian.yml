@@ -1,6 +1,6 @@
 ---
 
 - name: Install BigFix Client
-  apt:
+  ansible.builtin.apt:
     deb: "/tmp/{{ bigfix_client_file_dest }}"
     state: present

@@ -1,0 +1,17 @@
+---
+
+extends: default
+ignore: |
+  venv/
+  molecule.yml
+rules:
+  braces:
+    max-spaces-inside: 1
+    level: error
+  brackets:
+    max-spaces-inside: 1
+    level: error
+  line-length: disable
+  indentation:
+    spaces: 2
+    indent-sequences: consistent

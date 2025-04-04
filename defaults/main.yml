@@ -1,8 +1,13 @@
 ---
 bigfix_client_conf_dir: /etc/opt/BESClient
+bigfix_client_install_dir: /opt/BESClient
 bigfix_client_server_name: bigfix.local
 bigfix_client_server_port: 52311
 bigfix_client_service_name: besclient
+
+bigfix_client_host_port: "{{ bigfix_client_server_name }}:{{ bigfix_client_server_port }}"
+bigfix_client_masthead_url: "http://{{ bigfix_client_host_port }}/masthead/masthead.afxm"
+bigfix_client_server_validate_certs: true
 
 # Allows the detect os distribution/family to be remapped
 bigfix_client_override_vars: {}

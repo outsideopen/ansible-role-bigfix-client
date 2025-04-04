@@ -1,10 +1,15 @@
 ---
 - name: Install BigFix GPG Key
-  rpm_key:
+  ansible.builtin.rpm_key:
     state: present
     key: http://software.bigfix.com/download/bes/95/RPM-GPG-KEY-BigFix-9-V2
 
-- name: Install BigFix Client
-  yum:
+- name: Include the OS installation (yum)
+  when: ansible_facts.pkg_mgr == "yum"
+  ansible.builtin.include_tasks: "install/yum.yml"
+
+- name: Install BigFix Client (dnf)
+  when: ansible_facts.pkg_mgr != "yum"
+  ansible.builtin.dnf:
     name: "/tmp/{{ bigfix_client_file_dest }}"
     state: present
