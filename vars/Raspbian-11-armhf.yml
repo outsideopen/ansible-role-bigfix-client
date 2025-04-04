@@ -1,4 +1,4 @@
 ---
-bigfix_client_file_dest: BESAgent-10.0.11.108-raspbian9.armhf.deb
-bigfix_client_file_sum: 63245c49a418dc79d8bd615ec092b3493fa61f49dbeb5c049c92690acd72b192
-bigfix_client_file_url: https://software.bigfix.com/download/bes/100/BESAgent-10.0.11.108-raspbian9.armhf.deb
+bigfix_client_file_dest: BESAgent-11.0.3.82-raspbian10.armhf.deb
+bigfix_client_file_sum: a9da6213a7eb45fc32ad87d58f38fa6e6eee703f2486f112bf0e68bccbde2e8d
+bigfix_client_file_url: https://software.bigfix.com/download/bes/110/BESAgent-11.0.3.82-raspbian10.armhf.deb

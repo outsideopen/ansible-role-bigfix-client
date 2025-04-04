@@ -1,4 +1,4 @@
 ---
-bigfix_client_file_dest: BESAgent-10.0.11.108-debian6.amd64.deb
-bigfix_client_file_sum: ae6af1b2759bb45deb8d7f59575108a7c6b71a582f335f47c4061c5eee9b4dfd
-bigfix_client_file_url: https://software.bigfix.com/download/bes/100/BESAgent-10.0.11.108-debian6.amd64.deb
+bigfix_client_file_dest: BESAgent-10.0.10.46-debian6.amd64.deb
+bigfix_client_file_sum: ed9d41220d5b5281fcf193d374a3f3ab86444e0d6cbe5201a7b1cf6528a817a2
+bigfix_client_file_url: https://software.bigfix.com/download/bes/100/BESAgent-10.0.10.46-debian6.amd64.deb
