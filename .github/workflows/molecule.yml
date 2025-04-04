@@ -22,16 +22,9 @@ jobs:
       matrix:
         image:
           # current gen
-          - amazonlinux2023
-          - rockylinux9
+          - ubuntu2404
           # previous gen
           - ubuntu2204
-        include:
-          # test legacy os
-          - image: amazonlinux2
-            reqs: ansible-core==2.16.11
-          - image: centos7
-            reqs: ansible-core==2.16.11
     steps:
       - name: checkout
         uses: actions/checkout@v4
