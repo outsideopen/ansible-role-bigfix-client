@@ -1,4 +1,4 @@
 ---
-bigfix_client_file_dest: BESAgent-10.0.11.108.sparc_sol11.pkg
-bigfix_client_file_sum: d3f94e43ce812f7e720a6db55daf2358430dc6fcbbc008ac6bd69f34f8dc03e7
-bigfix_client_file_url: https://software.bigfix.com/download/bes/100/BESAgent-10.0.11.108.sparc_sol11.pkg
+bigfix_client_file_dest: BESAgent-11.0.3.82.sparc_sol11.pkg
+bigfix_client_file_sum: 48331f7340a9f76371d22dbb8477e232768f807309d9267ed0426bf31045182c
+bigfix_client_file_url: https://software.bigfix.com/download/bes/110/BESAgent-11.0.3.82.sparc_sol11.pkg

@@ -1,4 +1,4 @@
 ---
-bigfix_client_file_dest: BESAgent-10.0.11.108-rhe5.s390x.rpm
-bigfix_client_file_sum: 3e66a63c97831470f4fb62071c1ef3e4bcb52e7362b7b71b83adfaf6773ee074
-bigfix_client_file_url: https://software.bigfix.com/download/bes/100/BESAgent-10.0.11.108-rhe5.s390x.rpm
+bigfix_client_file_dest: BESAgent-11.0.3.82-rhe7.s390x.rpm
+bigfix_client_file_sum: 3a17419f35c906f3878705bc9f77bdf6a6fdc18572801b5e7291a4a1be400687
+bigfix_client_file_url: https://software.bigfix.com/download/bes/110/BESAgent-11.0.3.82-rhe7.s390x.rpm

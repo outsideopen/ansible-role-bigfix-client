@@ -1,4 +1,4 @@
 ---
-bigfix_client_file_dest: BESAgent-10.0.11.108-ubuntu144.ppc64el.deb
-bigfix_client_file_sum: 2c2688256c081b4b740d4a824ea94f70d5737c05ea6a25e766a34b8871c9e49d
-bigfix_client_file_url: https://software.bigfix.com/download/bes/100/BESAgent-10.0.11.108-ubuntu144.ppc64el.deb
+bigfix_client_file_dest: BESAgent-11.0.3.82-ubuntu18.ppc64el.deb
+bigfix_client_file_sum: 9a82ef7ef2ecf628473995b5d132b2bdcc0ef7f2e1cb9e856ddbb722b9e1e9b8
+bigfix_client_file_url: https://software.bigfix.com/download/bes/110/BESAgent-11.0.3.82-ubuntu18.ppc64el.deb

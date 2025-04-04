@@ -81,18 +81,23 @@ vars_path = "%s/vars" % (path)
 if not os.path.exists(vars_path):
     os.mkdir(vars_path, 0o755)
 
+ignored_os_names = [
+    "Mac OSX (.pkg)",
+    "Mac OS (.pkg)",
+    "Windows"
+]
 # retrieve the table row data
 html = BeautifulSoup(data, "html.parser")
 h3_agent = html.body.find('h3', attrs={"id": "agent"})
 info = {}
-for tr in h3_agent.find_next_sibling().tbody.findAll('tr'):
+for tr in h3_agent.find_next_sibling().tbody.find_all('tr'):
     obj = {}
-    tds = tr.findAll('td')
+    tds = tr.find_all('td')
     file = os.path.basename(tds[4].a.attrs['href'])
     if file in sums:
         _major = None
         _os = tds[0].text
-        if _os == "Mac OSX (.pkg)" or _os == "Windows":
+        if _os in ignored_os_names:
             continue
         if _os in ver_map:
             _major = ver_map[_os]
