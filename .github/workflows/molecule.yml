@@ -52,4 +52,5 @@ jobs:
           PY_COLORS: '1'
           ANSIBLE_FORCE_COLOR: '1'
           image: "${{ matrix.image }}"
+          network: "${{ job.container.network }}"
         working-directory: "${{ github.repository }}"
