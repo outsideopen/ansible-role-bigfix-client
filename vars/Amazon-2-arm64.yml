@@ -1,4 +1,4 @@
 ---
-bigfix_client_file_dest: BESAgent-11.0.4.60-al2.aarch64.rpm
-bigfix_client_file_sum: d007ef6370adf6aeffe32c8c14ff1d1cfb14b6ee5bda286bb6df0ff7cd01c4ac
-bigfix_client_file_url: https://software.bigfix.com/download/bes/110/BESAgent-11.0.4.60-al2.aarch64.rpm
+bigfix_client_file_dest: BESAgent-11.0.5.204-al2.aarch64.rpm
+bigfix_client_file_sum: 07080de8a3efaed9a7c9bedd6b917125eba00af29c9b2dad32b789b59f8870b0
+bigfix_client_file_url: https://software.bigfix.com/download/bes/110/BESAgent-11.0.5.204-al2.aarch64.rpm

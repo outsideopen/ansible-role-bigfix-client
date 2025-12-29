@@ -1,4 +1,4 @@
 ---
-bigfix_client_file_dest: BESAgent-11.0.4.60-sle12.s390x.rpm
-bigfix_client_file_sum: 683f5b2f4925305fab6384f5b350c0fe590d66737d00e1212ce8a426133f67ff
-bigfix_client_file_url: https://software.bigfix.com/download/bes/110/BESAgent-11.0.4.60-sle12.s390x.rpm
+bigfix_client_file_dest: BESAgent-11.0.5.204-sle12.s390x.rpm
+bigfix_client_file_sum: b1e9df03f19e034cf568a8d9128a8d6cf249b699295a6a07b2e750709f92ba38
+bigfix_client_file_url: https://software.bigfix.com/download/bes/110/BESAgent-11.0.5.204-sle12.s390x.rpm
