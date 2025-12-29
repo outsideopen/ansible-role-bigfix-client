@@ -1,4 +1,4 @@
 ---
-bigfix_client_file_dest: BESAgent-11.0.3.82.ppc64_aix71.pkg
-bigfix_client_file_sum: e1b76a67e47cfab1687d4cacba40aabc770a093b9e3516cbdd24303ac5967c8a
-bigfix_client_file_url: https://software.bigfix.com/download/bes/110/BESAgent-11.0.3.82.ppc64_aix71.pkg
+bigfix_client_file_dest: BESAgent-11.0.4.60.ppc64_aix71.pkg
+bigfix_client_file_sum: 99d32617c7a17847e95d394322dc5f21cc10320b4fcd436b1aa0feef8da848e4
+bigfix_client_file_url: https://software.bigfix.com/download/bes/110/BESAgent-11.0.4.60.ppc64_aix71.pkg
